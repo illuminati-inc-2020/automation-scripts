@@ -1,7 +1,3 @@
-// Disable CSR
-// Replace hashtag
-// Run
-
 javascript: (function(e, s) {
     e.src = s;
     e.onload = function() {
@@ -11,8 +7,10 @@ javascript: (function(e, s) {
     document.head.appendChild(e);
 })(document.createElement('script'), '//code.jquery.com/jquery-latest.min.js');
 
-var btnUnlike = '.plqBR,.coreSpriteHeartFull,.glyphsSpriteHeart__filled__24__red_5';
-var btnLike = '.ptsdu,.coreSpriteHeartOpen,.glyphsSpriteHeart__outline__24__grey_9';
+//var btnUnlike = '.plqBR,.coreSpriteHeartFull,.glyphsSpriteHeart__filled__24__red_5';
+//var btnLike = '.ptsdu,.coreSpriteHeartOpen,.glyphsSpriteHeart__outline__24__grey_9';
+var btnUnlike = 'svg[aria-label=Unlike]'
+var btnLike = 'svg[aria-label=Like]'
 var btnNext = '.HBoOv,.coreSpriteRightPaginationArrow';
 var btnFirst = '.eLAPa';
 
@@ -48,7 +46,7 @@ function like() {
 					    setTimeout(function() {
 					        jQuery(btnFirst).get(1).click();
 					        setTimeout(function() {
-					            jQuery('a:contains(#landscapepainting)').get(0).click();
+					            jQuery('a:contains(#illustration)').get(0).click();
 								setTimeout(function() {
 					        	    jQuery(btnFirst).get(1).click();
 					        	    setTimeout(like, 2000);
