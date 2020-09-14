@@ -1,4 +1,4 @@
-javascript: (function(e, s) {
+(function(e, s) {
     e.src = s;
     e.onload = function() {
         jQuery.noConflict();
@@ -7,10 +7,8 @@ javascript: (function(e, s) {
     document.head.appendChild(e);
 })(document.createElement('script'), '//code.jquery.com/jquery-latest.min.js');
 
-//var btnUnlike = '.plqBR,.coreSpriteHeartFull,.glyphsSpriteHeart__filled__24__red_5';
-//var btnLike = '.ptsdu,.coreSpriteHeartOpen,.glyphsSpriteHeart__outline__24__grey_9';
-var btnUnlike = 'svg[aria-label=Unlike]'
-var btnLike = 'svg[aria-label=Like]'
+var btnUnlike = 'button:has(svg[aria-label=Unlike])'
+var btnLike = 'button:has(svg[aria-label=Like])'
 var btnNext = '.HBoOv,.coreSpriteRightPaginationArrow';
 var btnFirst = '.eLAPa';
 
@@ -22,7 +20,7 @@ function like() {
 	}
 
 	setTimeout(function() {
-		jQuery(btnNext).get(0).click(); //open next	
+		jQuery(btnNext).get(0).click(); //open next
 		setTimeout(function() {
 		    if(Math.random(0,1) > 0.31) { //try to like
 		    	if(jQuery(btnUnlike).length > 0) {
@@ -38,7 +36,7 @@ function like() {
 					} else {
 						like();
 					}
-		    	} else { //error
+		    	} else { //unknown error. refresh explore page
 		    		console.log("ERROR!");
 		    		setTimeout(function() {
 			    		jQuery('.ckWGn').get(0).click();
@@ -46,7 +44,7 @@ function like() {
 					    setTimeout(function() {
 					        jQuery(btnFirst).get(1).click();
 					        setTimeout(function() {
-					            jQuery('a:contains(#illustration)').get(0).click();
+					            jQuery('a:contains(#procreate)').get(0).click();
 								setTimeout(function() {
 					        	    jQuery(btnFirst).get(1).click();
 					        	    setTimeout(like, 2000);
